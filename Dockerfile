@@ -10,6 +10,9 @@ RUN apt update && \
 RUN echo "%adm	ALL=(ALL)	NOPASSWD: ALL" > /etc/sudoers.d/adm && \
     chmod 0440 /etc/sudoers.d/adm
 
+RUN mkdir /data
+WORKDIR /data
+
 ARG USERNAME
 ENV USERNAME=${USERNAME}
 RUN useradd -G adm $USERNAME

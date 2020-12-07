@@ -11,6 +11,6 @@ build:
 
 run:
 	docker run -it --rm \
-		       --volume $HOME:/data \
+		       --volume $$HOME:/data \
 			   --name dockstation \
 			   dockstation
