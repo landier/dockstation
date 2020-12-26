@@ -22,13 +22,16 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: landier/dockstation:$(git log -1 --format=%H)
+      -
+        name: Build and push
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: landier/dockstation:latest
-          build-args: |
-            USERNAME=nlandier
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
