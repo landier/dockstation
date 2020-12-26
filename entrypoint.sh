@@ -1,7 +1,13 @@
 #!/bin/bash
 
-useradd -m -G adm $USER
-su $USER
+if [ -z ${USER+dummy} ]; then
+    echo "USER env variable is not set"
+    exit 1
+fi
 
-exec "$@"
+useradd -m -G adm $USER
+cd /home/$USER
+sudo -u $USER "$@"
+
+exit $?
 
