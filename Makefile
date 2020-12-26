@@ -6,12 +6,11 @@ clean:
 	docker rmi --force dockstation
 
 build:
-	docker build --tag $(image_name) \
-				 --build-arg USERNAME=$$USER \
-				 .
+	docker build --tag $(image_name) .
 
 run:
 	docker run -it --rm \
+			   --env USER=$$USER \
 		       --volume $$HOME:/data \
 			   --name dockstation \
 			   $(image_name)
