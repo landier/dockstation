@@ -1,6 +1,8 @@
+![CI](https://github.com/landier/dockstation/workflows/CI/badge.svg)
+
 # dockstation
 
-[https://hub.docker.com/repository/docker/landier/dockstation]
+[landier/dockstation](https://hub.docker.com/repository/docker/landier/dockstation)
 
 ## Quickstart
 ```bash
