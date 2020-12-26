@@ -3,6 +3,7 @@ FROM ubuntu:20.10
 RUN apt update -y && \
     apt upgrade -y && \
     apt install -y \
+        git \
         sudo \
         vim \
         zsh
