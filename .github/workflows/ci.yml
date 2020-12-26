@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: landier/dockstation:$(git log -1 --format=%H)
+          tags: landier/dockstation:${GITHUB_SHA::8}
       -
         name: Build and push
         uses: docker/build-push-action@v2
